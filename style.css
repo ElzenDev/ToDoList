@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    background-color: rgb(20, 20, 20);
+    color: blueviolet;
+}
+
+p{
+    display: flex;
+    justify-content: center;
+    font-size: xx-large;
+    font-weight: bold;
+}
+
+ul{
+    display: flex;
+    flex-direction: column-reverse;
+    margin-bottom: 20px;
+}
+
+.header button {
+    
+    position: absolute;
+    right: 20%;
+    margin-top: -31px;
+}
+
+.header i {
+
+    font-size: 22px;
+}
+
+.to-do{
+    margin-top: 40px;
+    width: 60%;
+}
+
+.textInsert {
+    margin-right: 10px;
+    background-color: rgb(33, 33, 33);
+    color: blueviolet;
+    border: none;
+    padding: 10px;
+    border-radius: 10px;
+    outline: none;
+    width: 90%;
+}
+
+.divInsert {
+    padding: 10px;
+    background-color: rgb(36, 36, 36);
+    border-radius: 10px;
+    display: flex;
+    box-shadow: 10px 10px 20px rgba(8, 8, 8, 0.9);
+}
+
+button {
+    width: 10%;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    outline: none;
+}
+
+.bx-plus {
+    font-size: 30px;
+    margin-left: 1px;
+    background-color: blueviolet;
+    border-radius: 50%;
+    padding: 5px;
+    color: whitesmoke;
+}
+
+.bxs-trash-alt {
+    color:brown;
+}
+
+.divLi {
+    margin-top: 20px;
+    padding: 10px;
+    background:rgb(33, 33, 33);
+    border-radius: 10px;
+    box-shadow: 10px 10px 20px rgba(8, 8, 8, 0.9);
+    display: flex;
+    align-items: center;
+}
+
+.divLi input {
+    width: 10%;
+    outline: none;
+    accent-color: currentcolor;
+}
+
+.divLi i {
+    font-size: 22px;
+    color:brown;
+}
+
+li {
+    list-style-type: none;
+}
+
+.line-trough {
+    text-decoration: line-through;
+    color:brown;
+}
+
+@media (max-width: 775px) {
+    input{
+        width:70%;
+    }
+
+    .divInsert button {
+        width: 30%;
+    }
+
+    i{
+        font-size: 30px;
+        padding: 0px;
+    }
+
+    p {
+        font-size: x-large;
+    }
+}
