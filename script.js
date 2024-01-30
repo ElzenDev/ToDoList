@@ -1,25 +1,37 @@
 
 //         ***   V A R I A V E I S ***
 
-const texto = document.querySelector('input')
+const inputArea = document.querySelector('.textInsert')
+const inputAreaDiv = document.querySelector('.divInsert')
 const btnInsert = document.querySelector('.divInsert button')
-const btnDeleteAll = document.querySelector('.header button')
+const btnDeleteAll = document.querySelector('#dltAll')
+const btnChangeTheme = document.querySelector('.themeToggler')
+const changeThemeIcon = document.querySelector('#changeThemeIcon')
 const ul = document.querySelector('ul')
 
 var itensDB = []
 
 //             *** F U N Ç Õ E S  ***
 
-texto.addEventListener('keypresss', e => {
-    if (e.key == 'Enter' && texto.value != '') {
+inputArea.addEventListener('keypresss', e => {
+    if (e.key == 'Enter' && inputArea.value != '') {
         setItemDB()
     }
 })
 
 btnInsert.onclick = () => {
-    if (texto.value != '') {
+    if (inputArea.value != '') {
         setItemDB()
     }
+}
+
+btnChangeTheme.onclick = () => {
+    document.body.classList.toggle('light')
+    btnChangeTheme.classList.toggle('light')
+    changeThemeIcon.classList.toggle('bi-sun-fill')
+    inputArea.classList.toggle('light')
+    inputAreaDiv.classList.toggle('light')
+    ul.classList.toggle('light')
 }
 
 function setItemDB(){
@@ -28,7 +40,7 @@ function setItemDB(){
         return
     }
 
-    itensDB.push({'item': texto.value, 'status': ''})
+    itensDB.push({'item': inputArea.value, 'status': ''})
     updateDB()
 }
 
@@ -49,11 +61,11 @@ function insertItemTela(text, status, i) {
     const li = document.createElement('li')
 
     li.innerHTML = `
-    <div class="divLi">
+    <section class="divLi">
       <input type="checkbox" ${status} data-i=${i} onchange="done(this, ${i});" />
       <span data-si=${i}>${text}</span>
-      <button onclick="removeItem(${i})" data-i=${i}><i class='bx bx-trash'></i></button>
-    </div>
+      <button onclick="removeItem(${i})" data-i=${i}><i id='dltIcon' class='bi-trash3-fill'></i></button>
+    </section>
     `
     ul.appendChild(li)
 
@@ -64,7 +76,7 @@ function insertItemTela(text, status, i) {
         document.querySelector(`[data-si="${i}"]`).classList.remove('line-through')
     }
 
-    texto.value = ''
+    inputArea.value = ''
     
 }
 
